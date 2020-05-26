@@ -1,0 +1,26 @@
+<input type="text" [formControl]="searchControl" class="justify-content-center form-control m-2 w-50" placeholder="Search..">
+<table class="table table-bordered mt-2">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Crop Type</th>
+        <th scope="col">Soil Type</th>
+        <th scope="col">Humidity(%)</th>
+        <th scope="col">Nitrogen</th>
+        <th scope="col">Phosphorus</th>
+        <th scope="col">Potassium</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let soil of allSoilDetails">
+        <th scope="row">{{soil.SI}}</th>
+        <td>{{soil.cropType}}</td>
+        <td>{{soil.soilType}}</td>
+        <td>{{soil.soilHumidity}}</td>
+        <td>{{soil.soilN}}</td>
+        <td>{{soil.soilP}}</td>
+        <td>{{soil.soilK}}</td>
+      </tr>
+    </tbody>
+  </table>
+
