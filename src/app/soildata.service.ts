@@ -7,7 +7,7 @@ import { tap } from 'rxjs/operators';
   providedIn: 'root'
 })
 export class SoildataService {
-  baseApiUrl = 'http://soilapp-api.boilerplate.in';
+  baseApiUrl = 'http://localhost:5035';
   constructor(private httpClient: HttpClient) { }
 
   getSoilDetails() {
