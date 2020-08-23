@@ -32,4 +32,19 @@ export class SoildataService {
     }));
 
   }
+  searchByNPK(query) {
+    const apiUrl = '/npk';
+    let searchParams = new HttpParams();
+    searchParams = query.n ? searchParams.append('n', query.n) : searchParams;
+    searchParams = query.p ? searchParams.append('p', query.p) : searchParams;
+    searchParams = query.k ? searchParams.append('k', query.k) : searchParams;
+    return this.httpClient.get<any>(this.baseApiUrl + apiUrl, {params: searchParams})
+    .pipe(tap((resData) => {
+      if (!resData) {
+        return;
+      }
+      return resData.map(e => new Soil(e));
+    }));
+
+  }
 }
